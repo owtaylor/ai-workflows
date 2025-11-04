@@ -89,6 +89,11 @@ If the tests are complete and passed:
     state: tests-passed
     comment: [Give a brief summary of what was tested with a link to the result.]
 
+If there are *some* test failures, but you are sure they are not regressions
+and most tests complete successfully:
+    state: tests-waived
+    comment: [Explain which tests failed and why they are not considered regressions]
+
 If the tests will be started automatically without user intervention, but are not yet running:
     state: tests-pending
     comment: [Provide a brief description of what tests are expected to run and where the results will be]

@@ -78,6 +78,18 @@ async def get_qe_data_map() -> dict[str, dict[str, dict[str, str]]]:
 
 
 async def get_qe_data(component: str) -> TestLocationInfo:
+    if component == "frr":
+        return TestLocationInfo(
+            component="frr",
+            qa_contact="fhrdina@redhat.com",
+            tests_location="https://gitlab.com/redhat/centos-stream/tests/frr",
+            test_config_location=None,
+            test_trigger_method="EWA for RHEL 8 and RHEL 9, manual for RHEL 10",
+            test_result_location="TCMS when using EWA",
+            test_docs_url=None,
+            notes=None,
+        )
+
     map = await get_qe_data_map()
     component_values = map["components"][component]
     team_values = map["teams"][component_values["assigned_team"]]
